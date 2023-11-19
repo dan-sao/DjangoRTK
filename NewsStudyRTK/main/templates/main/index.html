@@ -1,74 +1,22 @@
+{% extends 'main/base_template.html' %}
 {% load static %}
 {% load bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{% block title %} Главная страница {% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> {{ title }} </title>
-    <link rel="stylesheet" href="{% static 'main/css/style.css' %}" >
-    <script src="https://kit.fontawesome.com/a97047fead.js" crossorigin="anonymous"></script>
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
-</head>
-<body>
-    <h1> {{ header1 }} </h1>
-    <p> value = {{ value|add:"10" }} </p>
-
-<!--    {% if value > 0 %}-->
-<!--        <h3> Var > 0 </h3>-->
-<!--    {% else %}-->
-<!--        <h3> Var < 0 </h3>-->
-<!--    {% endif %}-->
-
-    <li>
-    {% for n in numbers %}
-        <ul> {{n.title}}, {{n.date}} </ul>
-    {% endfor %}
-    </li>
-
-    <a href="about/"> about </a>
-    <div class="container-fluid">
+{% block content %}
         <div class="row">
-            <div class="col-md-3">
-                <h1> Container_1 </h1>
-	            <h2> News_1 </h2>
- 	            <p> news_1_txt </p>
+            <div class="text-center" style="margin-top:30px;">
+                    <h1 >Главная страница</h1>
             </div>
-            <div class="col-md-5">
-                <h1> Container_2 </h1>
-	            <h2> News_2 </h2>
- 	            <p> news_2_txt </p>
+
+             <div class="single_news">
+                <div class="p-4 p-md-5 text-white rounded bg-dark" >
+                        <div class="col-md-6 px-0">
+                          <h1 class="display-4 fst-italic">Последняя новость</h1>
+                          <p class="lead my-3">Начало новости, для продолжения чтения нужно пройти по ссылки ниже</p>
+                          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Полный текст...</a></p>
+                        </div>
+                  </div>
             </div>
         </div>
-    </div>
-
-
-
-<!--    <table border="1">-->
-<!--        <th> Header cell of table_0 </th>-->
-<!--        <th> Header cell of table_1 </th>-->
-<!--        <tr>-->
-<!--            <td> Txt cell 1 </td>-->
-<!--          	<td> Txt cell 2 </td>-->
-<!--        </tr>-->
-<!--        	<tr>-->
-<!--              <td colspan ='2'> Txt cell 3 </td>-->
-<!--    		</tr>-->
-<!--    </table>-->
-
-
-
-<!--    <div >-->
-<!--        <h2> Header </h2>-->
-<!--        <p> Header </p>-->
-<!--    </div>-->
-
-<!--    <div id = "news3">-->
-<!--        <h2> Header id </h2>-->
-<!--        <p> Header </p>-->
-<!--    </div>-->
-<!--    <img src=" https://img-9gag-fun.9cache.com/photo/aVbxpod_460swp.webp", alt = "Заглушка">-->
-</body>
-</html>
+{% endblock %}
